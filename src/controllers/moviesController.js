@@ -1,14 +1,14 @@
-import { getAllMovies } from '../services/moviesService.js';
+import { getProducersInterval } from '../services/producersInterval.js';
 
-async function listMovies(_, res) {
+async function listIntervals(_, res) {
   try {
-    const movies = await getAllMovies();
-    res.json(movies);
+    const result = await getProducersInterval();
+    res.json(result);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch movies', details: error.message });
+    res.status(500).json({ error: 'Failed to calculate intervals', details: error.message });
   }
 }
 
 export default {
-  listMovies,
+  listIntervals,
 };
