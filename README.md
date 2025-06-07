@@ -75,11 +75,37 @@ curl -F "file=@src/data/Movielist.csv" http://localhost:3000/csv/upload
 }
 ```
 
+## Authentication (JWT)
+
+All routes are protected by a simple JWT middleware. You must provide a valid JWT token in the `Authorization` header for every request:
+
+```
+Authorization: Bearer <your_token>
+```
+
+### How to generate a test token
+
+You can generate a valid token using Node.js:
+
+Use this one-liner in your terminal (Linux):
+
+```bash
+node -e "console.log(require('jsonwebtoken').sign({user:'test'}, 'worst-movie-secret', {expiresIn:'1h'}))"
+```
+
+Use the generated token in your requests:
+
+```bash
+curl -H "Authorization: Bearer <your_token>" http://localhost:3000/movies/producers-interval
+```
+
 ## Project Structure
 ```
 src/
   app.js
   server.js
+  middlewares/
+    authMiddleware.js
   controllers/
     importController.js
     moviesController.js
