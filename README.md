@@ -130,7 +130,7 @@ uploads/
 - The CSV delimiter is `;` (semicolon).
 
 ## Testing
-To run tests (if implemented):
+To run tests:
 ```bash
 npm test
 ```
