@@ -13,6 +13,7 @@ API for importing, storing, and analyzing movie data, focusing on producers with
 - Multer (file upload)
 - csv-parse (CSV parsing)
 - jest (for testing)
+- jsonwebtoken (JWT authentication)
 
 ## Getting Started
 
